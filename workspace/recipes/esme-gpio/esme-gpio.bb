@@ -14,9 +14,9 @@ LIC_FILES_CHKSUM = ""
 
 inherit pkgconfig
 
-DEPENDS = "libgpiod (<2.0)"
+DEPENDS += "libgpiod (< 2.0)"
 
-#PREFERRED_VERSION_libgpiod = "1.6.3-1build1"
+PREFERRED_VERSION_libgpiod = "1.6.4"
 
 # No information for SRC_URI yet (only an external source tree was specified)
 SRC_URI = ""
@@ -38,5 +38,6 @@ do_compile () {
 
 do_install () {
 	# This is a guess; additional arguments may be required
-	oe_runmake install
+	oe_runmake 
+#install INSTALL=$(D)
 }
