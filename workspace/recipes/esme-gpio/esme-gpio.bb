@@ -21,12 +21,12 @@ PREFERRED_VERSION_libgpiod = "1.6.4"
 
 INITSCRIPT_PACKAGES = "${PN}"
 
-INITSCRIPT_NAME = "esme-led"
+INITSCRIPT_NAME = "esme-led.sh"
 
-INITSCRIPT_PARAMS = "defaults"
+INITSCRIPT_PARAMS = "start 99 5 2 . stop 20 0 1 6 ."
 
 # No information for SRC_URI yet (only an external source tree was specified)
-SRC_URI = ""
+SRC_URI += "git://github.com/Tdouillet/GPIO-TOGGLE.git;protocol=https;branch=main"
 
 
 # NOTE: this is a Makefile-only piece of software, so we cannot generate much of the
@@ -35,7 +35,7 @@ SRC_URI = ""
 
 do_configure () {
 	# Specify any needed configure commands here
-	:
+	:	
 }
 
 do_compile () {
